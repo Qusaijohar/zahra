@@ -11,38 +11,64 @@
       background: linear-gradient(to bottom right, #ffe6e6, #ffccff);
       color: #333;
       text-align: center;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
     h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       color: #cc3366;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-in;
     }
     .message {
-      font-size: 1.2em;
+      font-size: 1.5em;
       margin-top: 20px;
-      line-height: 1.6em;
+      line-height: 1.8em;
       color: #444;
+      animation: fadeIn 3s ease-in-out;
+      opacity: 0;
     }
     .gallery {
       margin-top: 40px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      opacity: 0;
+      animation: fadeIn 4s ease-in-out;
     }
     .gallery img {
       width: 100%;
       height: auto;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
     }
     footer {
       margin-top: 50px;
       font-style: italic;
       color: #888;
+      animation: fadeIn 5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .heart-icon {
+      font-size: 3em;
+      color: #cc3366;
+      animation: bounce 1.5s infinite alternate;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
     }
   </style>
 </head>
@@ -67,8 +93,10 @@
     </div>
 
     <footer>
+      <div class="heart-icon">💖</div>
       "With all my love, forever and always."
     </footer>
   </div>
 </body>
 </html>
+
